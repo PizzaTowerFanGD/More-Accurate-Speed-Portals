@@ -11,6 +11,7 @@
 	"version": "v1.0.0",
 	"developer": "MarioMastr",
 	"description": "Tweaks the speed of the player on each speed portal to be EXACTLY as the portals themselves mislead you into thinking they are.",
+	"repository": "https://github.com/MarioMastr/Accurate-Speed-Portals",
 	"settings": {
 		"enable-mod": {
 			"name": "Enable",
