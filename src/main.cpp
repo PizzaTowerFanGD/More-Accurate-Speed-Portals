@@ -66,9 +66,6 @@ class $modify(MyGJBGL, GJBaseGameLayer) {
 	void setupLevelStart(LevelSettingsObject* p0) {
 		GJBaseGameLayer::setupLevelStart(p0);
 
-		this->m_gameState.m_timeModRelated  = 0;
-		this->m_gameState.m_timeModRelated2 = 0;
-
 		switch (p0->m_startSpeed) {
 			case Speed::Slow: {
 				as<MyPlayer *>(this->m_player1)->updateTimeMod(Speed::Slow, 0);
