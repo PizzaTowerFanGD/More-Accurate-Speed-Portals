@@ -72,37 +72,32 @@ class $modify(MyGJBGL, GJBaseGameLayer) {
 		switch (p0->m_startSpeed) {
 			case Speed::Slow: {
 				as<MyPlayer *>(this->m_player1)->updateTimeMod(Speed::Slow, 0);
-				if (this->m_gameState.m_isDualMode) {
+				if (this->m_gameState.m_isDualMode)
 					as<MyPlayer *>(this->m_player2)->updateTimeMod(Speed::Slow, 0);
-				}
 				break;
 			}
 			case Speed::Normal: {
 				as<MyPlayer *>(this->m_player1)->updateTimeMod(Speed::Normal, 0);
-				if (this->m_gameState.m_isDualMode) {
+				if (this->m_gameState.m_isDualMode)
 					as<MyPlayer *>(this->m_player2)->updateTimeMod(Speed::Normal, 0);
-				}
 				break;
 			}
 			case Speed::Fast: {
 				as<MyPlayer *>(this->m_player1)->updateTimeMod(Speed::Fast, 0);
-				if (this->m_gameState.m_isDualMode) {
+				if (this->m_gameState.m_isDualMode)
 					as<MyPlayer *>(this->m_player2)->updateTimeMod(Speed::Fast, 0);
-				}
 				break;
 			}
 			case Speed::Faster: {
 				as<MyPlayer *>(this->m_player1)->updateTimeMod(Speed::Faster, 0);
-				if (this->m_gameState.m_isDualMode) {
+				if (this->m_gameState.m_isDualMode)
 					as<MyPlayer *>(this->m_player2)->updateTimeMod(Speed::Faster, 0);
-				}
 				break;
 			}
 			case Speed::Fastest: {
 				as<MyPlayer *>(this->m_player1)->updateTimeMod(Speed::Fastest, 0);
-				if (this->m_gameState.m_isDualMode) {
+				if (this->m_gameState.m_isDualMode)
 					as<MyPlayer *>(this->m_player2)->updateTimeMod(Speed::Fastest, 0);
-				}
 				break;
 			}
 		}
