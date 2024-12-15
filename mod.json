@@ -1,0 +1,26 @@
+{
+	"geode": "4.1.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "mariomastr.accurate_speed_portals",
+	"name": "Accurate Speed Portals",
+	"version": "v1.0.0",
+	"developer": "MarioMastr",
+	"description": "Tweaks the speed of the player on each speed portal to be EXACTLY as the portals themselves mislead you into thinking they are.",
+	"settings": {
+		"enable-mod": {
+			"name": "Enable",
+			"description": "Enables the fixed speed.",
+			"type": "bool",
+			"default": true
+		}
+	},
+	"tags": [
+		"gameplay",
+		"joke"
+	]
+}
