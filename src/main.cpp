@@ -105,30 +105,15 @@ class $modify(EffectGameObject) {
 	void triggerObject(GJBaseGameLayer* p0, int p1, gd::vector<int> const* p2) {
 		EffectGameObject::triggerObject(p0, p1, p2);
 
-		if (this->m_objectID == 200) { // 0.5x portal
+		if (this->m_objectID == 200) // 0.5x portal
 			as<MyGJBGL *>(p0)->updateTimeMod(Speed::Slow, 0, this->m_hasNoEffects);
-			this->playShineEffect();
-			p0->addToSpeedObjects(this);
-		}
-		else if (this->m_objectID == 201) { // 1x portal
+		else if (this->m_objectID == 201) // 1x portal
 			as<MyGJBGL *>(p0)->updateTimeMod(Speed::Normal, 0, this->m_hasNoEffects);
-			this->playShineEffect();
-			p0->addToSpeedObjects(this);
-		}
-		else if (this->m_objectID == 202) { // 2x portal
+		else if (this->m_objectID == 202) // 2x portal
 			as<MyGJBGL *>(p0)->updateTimeMod(Speed::Fast, 0, this->m_hasNoEffects);
-			this->playShineEffect();
-			p0->addToSpeedObjects(this);
-		}
-		else if (this->m_objectID == 203) { // 3x portal
+		else if (this->m_objectID == 203) // 3x portal
 			as<MyGJBGL *>(p0)->updateTimeMod(Speed::Faster, 0, this->m_hasNoEffects);
-			this->playShineEffect();
-			p0->addToSpeedObjects(this);
-		}
-		else if (this->m_objectID == 1334) { // 4x portal
+		else if (this->m_objectID == 1334) // 4x portal
 			as<MyGJBGL *>(p0)->updateTimeMod(Speed::Fastest, 0, this->m_hasNoEffects);
-			this->playShineEffect();
-			p0->addToSpeedObjects(this);
-		}
 	}
 };
