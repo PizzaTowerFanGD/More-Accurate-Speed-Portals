@@ -12,16 +12,23 @@ double speedSpeed(Speed speed) { // the best function name of all time
 	switch (speed) {
 		case Speed::Slow: {
 			if (enabled)
-				return 0.45f;
+				return 0.5f;
 			else
 				return 0.7f;
 
 			break;
 		}
-		case Speed::Normal: return 0.9f; break;
+		case Speed::Normal: {
+			if (enabled)
+				return 1.0f;
+			else
+				return 0.9f;
+
+			break;
+		}
 		case Speed::Fast: {
 			if (enabled)
-				return 1.8f;
+				return 2.0f;
 			else
 				return 1.1f;
 
@@ -29,7 +36,7 @@ double speedSpeed(Speed speed) { // the best function name of all time
 		}
 		case Speed::Faster: {
 			if (enabled)
-				return 2.7f;
+				return 3.0f;
 			else
 				return 1.3f;
 
@@ -37,7 +44,7 @@ double speedSpeed(Speed speed) { // the best function name of all time
 		}
 		case Speed::Fastest: {
 			if (enabled)
-				return 3.6f;
+				return 4.0f;
 			else
 				return 1.6f;
 
