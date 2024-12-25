@@ -6,12 +6,12 @@
 		"mac": "2.2074",
 		"ios": "2.2074"
 	},
-	"id": "mariomastr.accurate_speed_portals",
-	"name": "Accurate Speed Portals",
+	"id": "PizzaTowerFanGD.MASP",
+	"name": "More Accurate Speed Portals",
 	"version": "v1.0.0",
-	"developer": "MarioMastr",
-	"description": "Tweaks the speed of the player on each speed portal to be EXACTLY as the portals themselves mislead you into thinking they are.",
-	"repository": "https://github.com/MarioMastr/Accurate-Speed-Portals",
+	"developer": "PizzaTowerFanGD",
+	"description": "Tweaks the speed of the player on each speed portal to be EVEN MORE EXACTLY as the portals themselves mislead you into thinking they are.",
+	"repository": "https://github.com/Austinkeith2010/More-Accurate-Speed-Portals",
 	"settings": {
 		"enable-mod": {
 			"name": "Enable",
