@@ -22,31 +22,31 @@
         "speed-adjustment-0.5x": {
             "name": "0.5x Speed",
             "description": "Adjusts the speed of the 0.5x portal.",
-            "type": "number",
+            "type": "float",
             "default": 0.5
         },
         "speed-adjustment-1x": {
             "name": "1x Speed",
             "description": "Adjusts the speed of the 1x portal.",
-            "type": "number",
+            "type": "float",
             "default": 1.0
         },
         "speed-adjustment-2x": {
             "name": "2x Speed",
             "description": "Adjusts the speed of the 2x portal.",
-            "type": "number",
+            "type": "float",
             "default": 2.0
         },
         "speed-adjustment-3x": {
             "name": "3x Speed",
             "description": "Adjusts the speed of the 3x portal.",
-            "type": "number",
+            "type": "float",
             "default": 3.0
         },
         "speed-adjustment-4x": {
             "name": "4x Speed",
             "description": "Adjusts the speed of the 4x portal.",
-            "type": "number",
+            "type": "float",
             "default": 4.0
         }
     },
