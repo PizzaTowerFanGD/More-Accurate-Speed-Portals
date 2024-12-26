@@ -1,27 +1,57 @@
 {
-	"geode": "4.1.0",
-	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
-	},
-	"id": "PizzaTowerFanGD.MASP",
-	"name": "More Accurate Speed Portals",
-	"version": "v1.0.0",
-	"developer": "PizzaTowerFanGD",
-	"description": "Tweaks the speed of the player on each speed portal to be EVEN MORE EXACTLY as the portals themselves mislead you into thinking they are.",
-	"repository": "https://github.com/Austinkeith2010/More-Accurate-Speed-Portals",
-	"settings": {
-		"enable-mod": {
-			"name": "Enable",
-			"description": "Enables the fixed speed.",
-			"type": "bool",
-			"default": true
-		}
-	},
-	"tags": [
-		"gameplay",
-		"joke"
-	]
+    "geode": "4.1.0",
+    "gd": {
+        "win": "2.2074",
+        "android": "2.2074",
+        "mac": "2.2074",
+        "ios": "2.2074"
+    },
+    "id": "PizzaTowerFanGD.MASP",
+    "name": "More Accurate Speed Portals",
+    "version": "v1.0.0",
+    "developer": "PizzaTowerFanGD",
+    "description": "Tweaks the speed of the player on each speed portal to be EVEN MORE EXACTLY as the portals themselves mislead you into thinking they are.",
+    "repository": "https://github.com/Austinkeith2010/More-Accurate-Speed-Portals",
+    "settings": {
+        "enable-mod": {
+            "name": "Enable",
+            "description": "Enables the fixed speed.",
+            "type": "bool",
+            "default": true
+        },
+        "speed-adjustment-0.5x": {
+            "name": "0.5x Speed",
+            "description": "Adjusts the speed of the 0.5x portal.",
+            "type": "number",
+            "default": 0.5
+        },
+        "speed-adjustment-1x": {
+            "name": "1x Speed",
+            "description": "Adjusts the speed of the 1x portal.",
+            "type": "number",
+            "default": 1.0
+        },
+        "speed-adjustment-2x": {
+            "name": "2x Speed",
+            "description": "Adjusts the speed of the 2x portal.",
+            "type": "number",
+            "default": 2.0
+        },
+        "speed-adjustment-3x": {
+            "name": "3x Speed",
+            "description": "Adjusts the speed of the 3x portal.",
+            "type": "number",
+            "default": 3.0
+        },
+        "speed-adjustment-4x": {
+            "name": "4x Speed",
+            "description": "Adjusts the speed of the 4x portal.",
+            "type": "number",
+            "default": 4.0
+        }
+    },
+    "tags": [
+        "gameplay",
+        "joke"
+    ]
 }
