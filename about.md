@@ -7,7 +7,7 @@ Want to randomise the speed of each portal so that no two playthroughs of the st
 Want to not do any of this and just play the game? <cg>Cool!</c> All of this can be easily disabled in the settings!
 
 # NOTE:
-These are the values used by the game's logic to determine the speed of the player at each portal:
+These are the values used by the game's logic to determine the speed of the player at each portal. More technically, these are the floats used in the *p0* argument for the function PlayerObject::updateTimeMod(float p0, bool p1), which controls the speed of the player at each portal:
 - 0.5x portal: 0.7f
 - 1.0x portal: 0.9f
 - 2.0x portal: 1.1f
