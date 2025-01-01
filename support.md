@@ -1,1 +1,1 @@
-Edit this file to change your mod's support info, or delete it if you don't need it.
+If you have any issues, make an issue in the GitHub repo or message me on discord (mariomastr) and I'll try to get around to you as quickly as possible. It may take some time because I have tough school life.

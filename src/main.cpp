@@ -6,43 +6,77 @@ using namespace geode::prelude;
 #include <Geode/modify/GJBaseGameLayer.hpp>
 #include <Geode/modify/EffectGameObject.hpp>
 
-// Load the settings outside of a function
-bool enabled = Mod::get()->getSettingValue<bool>("enable-mod");
-float speed_0_5x = static_cast<float>(Mod::get()->getSettingValue<double>("speed-adjustment-0.5x"));
-float speed_1x = static_cast<float>(Mod::get()->getSettingValue<double>("speed-adjustment-1x"));
-float speed_2x = static_cast<float>(Mod::get()->getSettingValue<double>("speed-adjustment-2x"));
-float speed_3x = static_cast<float>(Mod::get()->getSettingValue<double>("speed-adjustment-3x"));
-float speed_4x = static_cast<float>(Mod::get()->getSettingValue<double>("speed-adjustment-4x"));
+// for the randomised numbers
+#include <random>
 
-double speedSpeed(Speed speed) {
+// Load the settings outside of a function
+bool enabled     = Mod::get()->getSettingValue<bool>("enable-mod");
+bool randomSpeed = Mod::get()->getSettingValue<bool>("random-speed");
+
+float minSpeed = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed"));
+float maxSpeed = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed"));
+
+float halfSpeed      = static_cast<float>(Mod::get()->getSettingValue<double>("half-speed"));
+float fullSpeed      = static_cast<float>(Mod::get()->getSettingValue<double>("full-speed"));
+float doubleSpeed    = static_cast<float>(Mod::get()->getSettingValue<double>("double-speed"));
+float tripleSpeed    = static_cast<float>(Mod::get()->getSettingValue<double>("triple-speed"));
+float quadrupleSpeed = static_cast<float>(Mod::get()->getSettingValue<double>("quadruple-speed"));
+
+float speedRandomiser() {
+    static std::default_random_engine e;
+    static std::uniform_real_distribution<float> dis(minSpeed, maxSpeed);
+    return dis(e);
+}
+
+double portalSpeeds(Speed speed) {
     switch (speed) {
         case Speed::Slow: {
-            if (enabled)
-                return speed_0_5x;
+            if (enabled) {
+                if(!randomSpeed)
+                    return halfSpeed;
+                else
+                    return speedRandomiser();
+            }
             else
                 return 0.7f;
         }
         case Speed::Normal: {
-            if (enabled)
-                return speed_1x;
+            if (enabled) {
+                if(!randomSpeed)
+                    return fullSpeed;
+                else
+                    return speedRandomiser();
+            }
             else
                 return 0.9f;
         }
         case Speed::Fast: {
-            if (enabled)
-                return speed_2x;
+            if (enabled) {
+                if(!randomSpeed)
+                    return doubleSpeed;
+                else
+                    return speedRandomiser();
+            }
             else
                 return 1.1f;
         }
         case Speed::Faster: {
-            if (enabled)
-                return speed_3x;
+            if (enabled) {
+                if(!randomSpeed)
+                    return tripleSpeed;
+                else
+                    return speedRandomiser();
+            }
             else
                 return 1.3f;
         }
         case Speed::Fastest: {
-            if (enabled)
-                return speed_4x;
+            if (enabled) {
+                if(!randomSpeed)
+                    return quadrupleSpeed;
+                else
+                    return speedRandomiser();
+            }
             else
                 return 1.6f;
         }
@@ -51,7 +85,7 @@ double speedSpeed(Speed speed) {
 
 class $modify(MyPlayer, PlayerObject) {
     void updateTimeMod(Speed speed, bool p1) {
-        double playerSpeed = speedSpeed(speed);
+        float playerSpeed = portalSpeeds(speed);
         PlayerObject::updateTimeMod(playerSpeed, p1);
         this->m_playerSpeed = playerSpeed;
     }

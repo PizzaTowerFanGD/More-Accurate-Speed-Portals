@@ -1,53 +1,159 @@
 {
-    "geode": "4.1.0",
+    "geode": "4.1.1",
     "gd": {
         "win": "2.2074",
         "android": "2.2074",
         "mac": "2.2074",
         "ios": "2.2074"
     },
-    "id": "PizzaTowerFanGD.MASP",
-    "name": "More Accurate Speed Portals",
-    "version": "v1.1.1",
-    "developer": "PizzaTowerFanGD",
-    "description": "Tweaks the speed of the player on each speed portal to be EVEN MORE EXACTLY as the portals themselves mislead you into thinking they are.",
-    "repository": "https://github.com/Austinkeith2010/More-Accurate-Speed-Portals",
+    "id": "mariomastr.customisable-speed-portals",
+    "name": "ReSpeed",
+    "version": "v1.1.0",
+    "developers": ["MarioMastr", "PizzaTowerFanGD"],
+    "description": "Allows you to tweak the speed of each speed portal individually from one another.",
+    "repository": "https://github.com/MarioMastr/Accurate-Speed-Portals",
     "settings": {
         "enable-mod": {
             "name": "Enable",
-            "description": "Enables the fixed speed.",
+            "description": "Enables the mod's changes. Disable this if you hate fun and/or just want to play regular GD.",
             "type": "bool",
             "default": true
         },
-        "speed-adjustment-0.5x": {
+        "random-title": {
+            "type": "title",
+            "name": "Speed Randomisation Options",
+            "description": "Options for customising the speed randomisation parts of this mod."
+        },
+        "random-speed": {
+            "enable-if": "enable-mod",
+            "name": "Random speed",
+            "description": "Randomises the speed value for each portal.",
+            "type": "bool",
+            "default": true
+        },
+        "min-speed": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Minimum speed",
+            "description": "Minimum speed to use in the randomisation range. Must have \"random speed\" option enabled for this to have any use in any way shape or form.",
+            "type": "float",
+            "default": 0.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "max-speed": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Maximum speed",
+            "description": "Maximum speed to use in the randomisation range. Must have \"random speed\" option enabled for this to have any use in any way shape or form.",
+            "type": "float",
+            "default": 5.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "adjustment-title": {
+            "type": "title",
+            "name": "Speed Adjustment Options",
+            "description": "Options for customising the speed adjustment parts of this mod. These options will not have any effect if the randomiser is enabled."
+        },
+        "half-speed": {
+            "enable-if": "enable-mod",
             "name": "0.5x Speed",
             "description": "Adjusts the speed of the 0.5x portal.",
             "type": "float",
-            "default": 0.5
+            "default": 0.5,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
         },
-        "speed-adjustment-1x": {
+        "full-speed": {
+            "enable-if": "enable-mod",
             "name": "1x Speed",
             "description": "Adjusts the speed of the 1x portal.",
             "type": "float",
-            "default": 1.0
+            "default": 1.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
         },
-        "speed-adjustment-2x": {
+        "double-speed": {
+            "enable-if": "enable-mod",
             "name": "2x Speed",
             "description": "Adjusts the speed of the 2x portal.",
             "type": "float",
-            "default": 2.0
+            "default": 2.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
         },
-        "speed-adjustment-3x": {
+        "triple-speed": {
+            "enable-if": "enable-mod",
             "name": "3x Speed",
             "description": "Adjusts the speed of the 3x portal.",
             "type": "float",
-            "default": 3.0
+            "default": 3.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
         },
-        "speed-adjustment-4x": {
+        "quadruple-speed": {
+            "enable-if": "enable-mod",
             "name": "4x Speed",
             "description": "Adjusts the speed of the 4x portal.",
             "type": "float",
-            "default": 4.0
+            "default": 4.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
         }
     },
     "tags": [
