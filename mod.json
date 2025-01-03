@@ -31,10 +31,10 @@
             "type": "bool",
             "default": true
         },
-        "min-speed": {
+        "min-speed-slow": {
             "enable-if": "enable-mod && random-speed",
-            "name": "Minimum speed",
-            "description": "Minimum speed to use in the randomisation range. Must have \"random speed\" option enabled for this to have any use in any way shape or form.",
+            "name": "Minimum speed for 0.5x",
+            "description": "Minimum speed to use in the randomisation range for 0.5x speed portal.",
             "type": "float",
             "default": 0.0,
             "min": 0.0,
@@ -48,12 +48,148 @@
                 "input": true
             }
         },
-        "max-speed": {
+        "max-speed-slow": {
             "enable-if": "enable-mod && random-speed",
-            "name": "Maximum speed",
-            "description": "Maximum speed to use in the randomisation range. Must have \"random speed\" option enabled for this to have any use in any way shape or form.",
+            "name": "Maximum speed for 0.5x",
+            "description": "Maximum speed to use in the randomisation range for 0.5x speed portal.",
             "type": "float",
-            "default": 5.0,
+            "default": 0.7,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "min-speed-normal": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Minimum speed for 1x",
+            "description": "Minimum speed to use in the randomisation range for 1x speed portal.",
+            "type": "float",
+            "default": 0.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "max-speed-normal": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Maximum speed for 1x",
+            "description": "Maximum speed to use in the randomisation range for 1x speed portal.",
+            "type": "float",
+            "default": 0.9,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "min-speed-fast": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Minimum speed for 2x",
+            "description": "Minimum speed to use in the randomisation range for 2x speed portal.",
+            "type": "float",
+            "default": 0.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "max-speed-fast": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Maximum speed for 2x",
+            "description": "Maximum speed to use in the randomisation range for 2x speed portal.",
+            "type": "float",
+            "default": 1.1,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "min-speed-faster": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Minimum speed for 3x",
+            "description": "Minimum speed to use in the randomisation range for 3x speed portal.",
+            "type": "float",
+            "default": 0.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "max-speed-faster": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Maximum speed for 3x",
+            "description": "Maximum speed to use in the randomisation range for 3x speed portal.",
+            "type": "float",
+            "default": 1.3,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "min-speed-fastest": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Minimum speed for 4x",
+            "description": "Minimum speed to use in the randomisation range for 4x speed portal.",
+            "type": "float",
+            "default": 0.0,
+            "min": 0.0,
+            "control": {
+                "arrows": true,
+                "arrow-step": 0.1,
+                "big-arrows": true,
+                "big-arrow-step": 0.5,
+                "slider": true,
+                "slider-step": 0.1,
+                "input": true
+            }
+        },
+        "max-speed-fastest": {
+            "enable-if": "enable-mod && random-speed",
+            "name": "Maximum speed for 4x",
+            "description": "Maximum speed to use in the randomisation range for 4x speed portal.",
+            "type": "float",
+            "default": 1.6,
             "min": 0.0,
             "control": {
                 "arrows": true,
