@@ -13,8 +13,20 @@ using namespace geode::prelude;
 bool enabled     = Mod::get()->getSettingValue<bool>("enable-mod");
 bool randomSpeed = Mod::get()->getSettingValue<bool>("random-speed");
 
-float minSpeed = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed"));
-float maxSpeed = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed"));
+float minSpeedSlow = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-slow"));
+float maxSpeedSlow = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-slow"));
+
+float minSpeedNormal = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-normal"));
+float maxSpeedNormal = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-normal"));
+
+float minSpeedFast = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-fast"));
+float maxSpeedFast = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-fast"));
+
+float minSpeedFaster = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-faster"));
+float maxSpeedFaster = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-faster"));
+
+float minSpeedFastest = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-fastest"));
+float maxSpeedFastest = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-fastest"));
 
 float halfSpeed      = static_cast<float>(Mod::get()->getSettingValue<double>("half-speed"));
 float fullSpeed      = static_cast<float>(Mod::get()->getSettingValue<double>("full-speed"));
@@ -22,7 +34,7 @@ float doubleSpeed    = static_cast<float>(Mod::get()->getSettingValue<double>("d
 float tripleSpeed    = static_cast<float>(Mod::get()->getSettingValue<double>("triple-speed"));
 float quadrupleSpeed = static_cast<float>(Mod::get()->getSettingValue<double>("quadruple-speed"));
 
-float speedRandomiser() {
+float speedRandomiser(float minSpeed, float maxSpeed) {
     static std::default_random_engine e;
     static std::uniform_real_distribution<float> dis(minSpeed, maxSpeed);
     return dis(e);
@@ -35,7 +47,7 @@ double portalSpeeds(Speed speed) {
                 if(!randomSpeed)
                     return halfSpeed;
                 else
-                    return speedRandomiser();
+                    return speedRandomiser(minSpeedSlow, maxSpeedSlow);
             }
             else
                 return 0.7f;
@@ -45,7 +57,7 @@ double portalSpeeds(Speed speed) {
                 if(!randomSpeed)
                     return fullSpeed;
                 else
-                    return speedRandomiser();
+                    return speedRandomiser(minSpeedNormal, maxSpeedNormal);
             }
             else
                 return 0.9f;
@@ -55,7 +67,7 @@ double portalSpeeds(Speed speed) {
                 if(!randomSpeed)
                     return doubleSpeed;
                 else
-                    return speedRandomiser();
+                    return speedRandomiser(minSpeedFast, maxSpeedFast);
             }
             else
                 return 1.1f;
@@ -65,7 +77,7 @@ double portalSpeeds(Speed speed) {
                 if(!randomSpeed)
                     return tripleSpeed;
                 else
-                    return speedRandomiser();
+                    return speedRandomiser(minSpeedFaster, maxSpeedFaster);
             }
             else
                 return 1.3f;
@@ -75,7 +87,7 @@ double portalSpeeds(Speed speed) {
                 if(!randomSpeed)
                     return quadrupleSpeed;
                 else
-                    return speedRandomiser();
+                    return speedRandomiser(minSpeedFastest, maxSpeedFastest);
             }
             else
                 return 1.6f;
