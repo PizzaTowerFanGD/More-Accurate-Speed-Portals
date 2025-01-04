@@ -1,3 +1,6 @@
+# 1.2.0
+- Added individual randomisation ranges for each portal.
+- Various under-the-hood cleanups and improvements.
 # 1.1.1
 - Add "cheat" tag per moderator's request.
 # 1.1.0
