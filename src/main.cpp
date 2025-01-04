@@ -75,7 +75,9 @@ double portalSpeeds(Speed speed, bool isPlayer1) {
     return 1.0; // Default speed if none match
 }
 
-class $modify(MyPlayer, PlayerObject) {
+// speed logic:
+// player
+class $modify(SpeedPlayer, PlayerObject) {
     void updateTimeMod(Speed speed, bool p1, bool isPlayer1) {
         float playerSpeed = portalSpeeds(speed, isPlayer1);
         PlayerObject::updateTimeMod(playerSpeed, p1);
@@ -83,20 +85,21 @@ class $modify(MyPlayer, PlayerObject) {
     }
 };
 
-class $modify(MyGJBGL, GJBaseGameLayer) {
-    void updateTimeMod(Speed speed, bool p1, bool p2, bool isPlayer1) {
+// assigning speeds to portals when starting level (p0->m_startSpeed)
+class $modify(SpeedGJBGL, GJBaseGameLayer) {
+    void updateTimeMod(Speed speed, bool p1, bool isPlayer1) {
         this->m_gameState.m_timeModRelated  = 0;
         this->m_gameState.m_timeModRelated2 = 0;
-        as<MyPlayer *>(this->m_player1)->updateTimeMod(speed, p2, isPlayer1);
+        as<SpeedPlayer *>(this->m_player1)->updateTimeMod(speed, p1, isPlayer1); 
         if (this->m_gameState.m_isDualMode)
-            as<MyPlayer *>(this->m_player2)->updateTimeMod(speed, p2, !isPlayer1);
+            as<SpeedPlayer *>(this->m_player2)->updateTimeMod(speed, p1, !isPlayer1);
     }
 
     void setupLevelStart(LevelSettingsObject* p0) {
         GJBaseGameLayer::setupLevelStart(p0);
 
         bool isPlayer1 = !Mod::get()->getSettingValue<bool>("enable-mod-2p") ? true : (this->m_gameState.m_isDualMode ? false : true);
-        MyPlayer *player = isPlayer1 ? as<MyPlayer *>(this->m_player1) : as<MyPlayer *>(this->m_player2);
+        SpeedPlayer *player = isPlayer1 ? as<SpeedPlayer *>(this->m_player1) : as<SpeedPlayer *>(this->m_player2);
         
         switch (p0->m_startSpeed) {
             case Speed::Slow:    player->updateTimeMod(Speed::Slow, 0, isPlayer1);    break;
@@ -108,22 +111,22 @@ class $modify(MyGJBGL, GJBaseGameLayer) {
     }
 };
 
-class $modify(EffectGameObject) {
+class $modify(SpeedEffectGameObject, EffectGameObject) {
     void triggerObject(GJBaseGameLayer* p0, int p1, gd::vector<int> const* p2) {
         EffectGameObject::triggerObject(p0, p1, p2);
 
         bool isPlayer1 = !Mod::get()->getSettingValue<bool>("enable-mod-2p") ? true : (this->m_activatedByPlayer1 ? true : ((p0->m_gameState.m_isDualMode && this->m_activatedByPlayer2) ? false : true));
-        MyGJBGL *gameLayer = as<MyGJBGL *>(p0);
+        SpeedGJBGL *gameLayer = as<SpeedGJBGL *>(p0);
 
         if (this->m_objectID == 200) // 0.5x portal
-            gameLayer->updateTimeMod(Speed::Slow, 0, this->m_hasNoEffects, isPlayer1);
+            gameLayer->updateTimeMod(Speed::Slow, this->m_hasNoEffects, isPlayer1);
         else if (this->m_objectID == 201) // 1x portal
-            gameLayer->updateTimeMod(Speed::Normal, 0, this->m_hasNoEffects, isPlayer1);
+            gameLayer->updateTimeMod(Speed::Normal, this->m_hasNoEffects, isPlayer1);
         else if (this->m_objectID == 202) // 2x portal
-            gameLayer->updateTimeMod(Speed::Fast, 0, this->m_hasNoEffects, isPlayer1);
+            gameLayer->updateTimeMod(Speed::Fast, this->m_hasNoEffects, isPlayer1);
         else if (this->m_objectID == 203) // 3x portal
-            gameLayer->updateTimeMod(Speed::Faster, 0, this->m_hasNoEffects, isPlayer1);
+            gameLayer->updateTimeMod(Speed::Faster, this->m_hasNoEffects, isPlayer1);
         else if (this->m_objectID == 1334) // 4x portal
-            gameLayer->updateTimeMod(Speed::Fastest, 0, this->m_hasNoEffects, isPlayer1);
+            gameLayer->updateTimeMod(Speed::Fastest, this->m_hasNoEffects, isPlayer1);
     }
 };
