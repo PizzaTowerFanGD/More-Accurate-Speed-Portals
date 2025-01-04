@@ -8,10 +8,7 @@
     },
     "id": "mariomastr.customisable-speed-portals",
     "name": "ReSpeed",
-
     "version": "v1.2.0",
-
-
     "developers": ["MarioMastr", "PizzaTowerFanGD"],
     "description": "Allows you to tweak the speed of each speed portal individually from one another.",
     "repository": "https://github.com/MarioMastr/Accurate-Speed-Portals",
