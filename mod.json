@@ -293,7 +293,378 @@
                 "slider-step": 0.1,
                 "input": true
             }
+        },
+    "enable-mod-2p": {
+        "name": "Enable Player 2 Mod",
+        "description": "Toggle to enable Player 2 settings.",
+        "type": "bool",
+        "default": false
+    },
+    "p2-divider": {
+        "name": "Player 2 Settings",
+        "type": "title"
+    },
+    "min-speed-slow-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Slow (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for slow speed portal for Player 2.",
+        "type": "float",
+        "default": 0.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
         }
+    },
+    "max-speed-slow-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Slow (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for slow speed portal for Player 2.",
+        "type": "float",
+        "default": 0.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-normal-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Normal (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for normal speed portal for Player 2.",
+        "type": "float",
+        "default": 0.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-normal-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Normal (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for normal speed portal for Player 2.",
+        "type": "float",
+        "default": 1.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-fast-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Fast (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for fast speed portal for Player 2.",
+        "type": "float",
+        "default": 1.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-fast-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Fast (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for fast speed portal for Player 2.",
+        "type": "float",
+        "default": 1.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-faster-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Faster (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for faster speed portal for Player 2.",
+        "type": "float",
+        "default": 1.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-faster-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Faster (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for faster speed portal for Player 2.",
+        "type": "float",
+        "default": 2.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-fastest-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Fastest (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for fastest speed portal for Player 2.",
+        "type": "float",
+        "default": 2.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-fastest-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Fastest (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for fastest speed portal for Player 2.",
+        "type": "float",
+        "default": 3.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+            "p2-divider": {
+        "name": "Player 2 Settings",
+        "type": "title"
+    },
+    "enable-mod-2p": {
+        "name": "Enable Player 2 Mod",
+        "description": "Toggle to enable Player 2 settings.",
+        "type": "bool",
+        "default": false
+    },
+    "min-speed-slow-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Slow (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for slow speed portal for Player 2.",
+        "type": "float",
+        "default": 0.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-slow-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Slow (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for slow speed portal for Player 2.",
+        "type": "float",
+        "default": 0.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-normal-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Normal (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for normal speed portal for Player 2.",
+        "type": "float",
+        "default": 0.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-normal-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Normal (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for normal speed portal for Player 2.",
+        "type": "float",
+        "default": 1.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-fast-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Fast (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for fast speed portal for Player 2.",
+        "type": "float",
+        "default": 1.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-fast-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Fast (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for fast speed portal for Player 2.",
+        "type": "float",
+        "default": 1.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-faster-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Faster (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for faster speed portal for Player 2.",
+        "type": "float",
+        "default": 1.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-faster-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Faster (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for faster speed portal for Player 2.",
+        "type": "float",
+        "default": 2.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "min-speed-fastest-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Minimum speed for Fastest (Player 2)",
+        "description": "Minimum speed to use in the randomisation range for fastest speed portal for Player 2.",
+        "type": "float",
+        "default": 2.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "max-speed-fastest-p2": {
+        "enable-if": ["random-speed", "enable-mod-2p", "enable-mod"],
+        "name": "Maximum speed for Fastest (Player 2)",
+        "description": "Maximum speed to use in the randomisation range for fastest speed portal for Player 2.",
+        "type": "float",
+        "default": 3.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "slow-speed-p2": {
+        "enable-if": ["enable-mod-2p", "enable-mod"],
+        "name": "Slow Speed (Player 2)",
+        "description": "Set the speed for Player 2 at slow.",
+        "type": "float",
+        "default": 0.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "normal-speed-p2": {
+        "enable-if": ["enable-mod-2p", "enable-mod"],
+        "name": "Normal Speed (Player 2)",
+        "description": "Set the speed for Player 2 at normal.",
+        "type": "float",
+        "default": 1.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "fast-speed-p2": {
+        "enable-if": ["enable-mod-2p", "enable-mod"],
+        "name": "Fast Speed (Player 2)",
+        "description": "Set the speed for Player 2 at fast.",
+        "type": "float",
+        "default": 1.5,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "faster-speed-p2": {
+        "enable-if": ["enable-mod-2p", "enable-mod"],
+        "name": "Faster Speed (Player 2)",
+        "description": "Set the speed for Player 2 at faster.",
+        "type": "float",
+        "default": 2.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+    },
+    "fastest-speed-p2": {
+        "enable-if": ["enable-mod-2p", "enable-mod"],
+        "name": "Fastest Speed (Player 2)",
+        "description": "Set the speed for Player 2 at fastest.",
+        "type": "float",
+        "default": 3.0,
+        "min": 0.0,
+        "control": {
+            "arrows": true,
+            "arrow-step": 0.1,
+            "big-arrows": true,
+            "big-arrow-step": 0.5
+        }
+
+
     },
     "tags": [
         "gameplay",
