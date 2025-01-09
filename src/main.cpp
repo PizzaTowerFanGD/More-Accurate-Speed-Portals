@@ -9,16 +9,7 @@ using namespace geode::prelude;
 // for the randomised numbers
 #include <random>
 
-// Load the settings IN SIDE of a function
-
-
-float speedRandomiser(float minSpeed, float maxSpeed) {
-    static std::default_random_engine e;
-    static std::uniform_real_distribution<float> dis(minSpeed, maxSpeed);
-    return dis(e);
-}
-
-double portalSpeeds(Speed speed, bool isPlayer1) {
+// Load the settings outside of a function
 bool enabled     = Mod::get()->getSettingValue<bool>("enable-mod");
 bool randomSpeed = Mod::get()->getSettingValue<bool>("random-speed");
 bool enabled2p   = Mod::get()->getSettingValue<bool>("enable-2p-mod");
@@ -56,6 +47,14 @@ float fullSpeedP2 = static_cast<float>(Mod::get()->getSettingValue<double>("full
 float doubleSpeedP2 = static_cast<float>(Mod::get()->getSettingValue<double>("double-speed-p2"));
 float tripleSpeedP2 = static_cast<float>(Mod::get()->getSettingValue<double>("triple-speed-p2"));
 float quadrupleSpeedP2 = static_cast<float>(Mod::get()->getSettingValue<double>("quadruple-speed-p2"));
+
+float speedRandomiser(float minSpeed, float maxSpeed) {
+    static std::default_random_engine e;
+    static std::uniform_real_distribution<float> dis(minSpeed, maxSpeed);
+    return dis(e);
+}
+
+double portalSpeeds(Speed speed, bool isPlayer1) {
     if (isPlayer1) {
         switch (speed) {
             case Speed::Slow: return randomSpeed ? speedRandomiser(minSpeedSlowP1, maxSpeedSlowP1) : halfSpeedP1;
@@ -85,12 +84,12 @@ class $modify(MyPlayer, PlayerObject) {
 };
 
 class $modify(MyGJBGL, GJBaseGameLayer) {
-    void updateTimeMod(Speed speed, bool p1) {
+    void updateTimeMod(Speed speed, bool p1, bool p2, bool isPlayer1) {
         this->m_gameState.m_timeModRelated  = 0;
         this->m_gameState.m_timeModRelated2 = 0;
-        as<MyPlayer *>(this->m_player1)->updateTimeMod(speed, p1);
+        as<MyPlayer *>(this->m_player1)->updateTimeMod(speed, p2, isPlayer1);
         if (this->m_gameState.m_isDualMode)
-            as<MyPlayer *>(this->m_player2)->updateTimeMod(speed, p1);
+            as<MyPlayer *>(this->m_player2)->updateTimeMod(speed, p2, !isPlayer1);
     }
 
     void setupLevelStart(LevelSettingsObject* p0) {
