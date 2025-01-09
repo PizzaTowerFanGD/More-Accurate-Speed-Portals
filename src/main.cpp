@@ -99,7 +99,35 @@ float portalSpeeds(Speed speed) {
         }
     }
 }
+void doSettingsUpdate() {
+    // Load the settings (again):
+    // bool settings
+    enabled     = Mod::get()->getSettingValue<bool>("enable-mod");
+    randomSpeed = Mod::get()->getSettingValue<bool>("random-speed");
 
+    // min and max speeds for randomisation
+    minSpeedSlow = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-slow"));
+    maxSpeedSlow = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-slow"));
+
+    minSpeedNormal = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-normal"));
+    maxSpeedNormal = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-normal"));
+
+    minSpeedFast = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-fast"));
+    maxSpeedFast = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-fast"));
+
+    minSpeedFaster = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-faster"));
+    maxSpeedFaster = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-faster"));
+
+    minSpeedFastest = static_cast<float>(Mod::get()->getSettingValue<double>("min-speed-fastest"));
+    maxSpeedFastest = static_cast<float>(Mod::get()->getSettingValue<double>("max-speed-fastest"));
+
+    // singular speed values for when randomisation is disabled
+    halfSpeed      = static_cast<float>(Mod::get()->getSettingValue<double>("half-speed"));
+    fullSpeed      = static_cast<float>(Mod::get()->getSettingValue<double>("full-speed"));
+    doubleSpeed    = static_cast<float>(Mod::get()->getSettingValue<double>("double-speed"));
+    tripleSpeed    = static_cast<float>(Mod::get()->getSettingValue<double>("triple-speed"));
+    quadrupleSpeed = static_cast<float>(Mod::get()->getSettingValue<double>("quadruple-speed"));
+}
 // speed logic:
 // player
 class $modify(SpeedPlayer, PlayerObject) {
@@ -122,7 +150,7 @@ class $modify(SpeedGJBGL, GJBaseGameLayer) {
 
     void setupLevelStart(LevelSettingsObject* p0) {
         GJBaseGameLayer::setupLevelStart(p0);
-
+        doSettingsUpdate(); // make changing settings NOT require a restart
         switch (p0->m_startSpeed) {
             case Speed::Slow: {
                 as<SpeedPlayer *>(this->m_player1)->updateTimeMod(Speed::Slow, 0);
