@@ -9,6 +9,7 @@ using namespace geode::prelude;
 // for the randomised numbers
 #include <random>
 
+// randomised speed logic
 float speedRandomiser(float minSpeed, float maxSpeed) {
     static std::default_random_engine e;
     static std::uniform_real_distribution<float> dis(minSpeed, maxSpeed);
